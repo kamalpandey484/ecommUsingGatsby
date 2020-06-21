@@ -7,6 +7,32 @@ export default class Navbar extends Component {
   state = {
     navbarState: false,
     navbarClass: "collapse navbar-collapse",
+    menus: [
+      {
+        id: 1,
+        name: "Home",
+        link: "/",
+        class: "nav-link text-white mt-1",
+      },
+      {
+        id: 2,
+        name: "About",
+        link: "/about",
+        class: "nav-link text-white mt-1",
+      },
+      {
+        id: 3,
+        name: "Contact",
+        link: "/contact",
+        class: "nav-link text-white mt-1",
+      },
+      {
+        id: 3,
+        name: <FaCartArrowDown className="cart-icon" />,
+        link: "/cart",
+        class: "nav-link text-white",
+      },
+    ],
   }
 
   menuToggler = () => {
@@ -22,31 +48,28 @@ export default class Navbar extends Component {
   }
 
   render() {
+    const { menus } = this.state
     return (
       <nav className="navbar navbar-expand-sm bg-theme text-white">
         <Link to="/" className="navbar-brand ml-5">
           <img src={logo} alt="logo" width="50px" />
         </Link>
-        <button className="navbar-toggler" type="button" onClick={this.menuToggler}>
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={this.menuToggler}
+        >
           <span className="text-white">menu</span>
         </button>
         <div className={this.state.navbarClass}>
           <ul className="navbar-nav ml-auto mr-5">
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white mt-1">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white mt-1">
-                About us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link text-white">
-                <FaCartArrowDown className="cart-icon" />
-              </Link>
-            </li>
+            {menus.map(menu => (
+              <li className="nav-item" key={menu.id}>
+                <Link to={menu.link} className={menu.class}>
+                  {menu.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
