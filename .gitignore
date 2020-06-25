@@ -68,9 +68,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-
-#config file
-gatsby-config.js
-gatsby-browser.js
-gatsby-node.js
-gatsby-ssr.js
