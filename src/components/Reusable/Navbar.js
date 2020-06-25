@@ -27,7 +27,7 @@ export default class Navbar extends Component {
         class: "nav-link text-white mt-1",
       },
       {
-        id: 3,
+        id: 4,
         name: <FaCartArrowDown className="cart-icon" />,
         link: "/cart",
         class: "nav-link text-white",
