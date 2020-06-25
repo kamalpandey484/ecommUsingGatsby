@@ -38,7 +38,7 @@ export default class CartCourses extends Component {
                       data-item-id={node.id}
                       data-item-name={node.title}
                       data-item-price={node.price}
-                      data-item-url=""
+                      data-item-url="https://ecommusinggatsby.netlify.app/"
                       data-item-image={node.image.fixed.src}
                     >
                       Join Now
